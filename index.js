@@ -4,6 +4,7 @@ import gradient from "gradient-string";
 import chalkAnimation from "chalk-animation";
 import figlet from "figlet";
 import sleep from "./utils/sleep.js";
+import npmInit from "./commands/init.js";
 
 async function welcome() {
   console.log(
@@ -17,3 +18,4 @@ async function welcome() {
 }
 
 await welcome();
+await npmInit();
