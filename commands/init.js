@@ -4,16 +4,20 @@ import inquirer from "inquirer";
 import chalkAnimation from "chalk-animation";
 import sleep from "../utils/sleep.js";
 
-
 export default async function npmInit() {
-  console.log(chalk.bold(chalk.blue("1. npm init - initiate a new project")));
+  console.log(chalk.bold("Let's get started\n"));
+  const npmInit = chalkAnimation.rainbow("1. npm init");
+  await sleep(3000);
+  npmInit.start();
+  npmInit.stop();
+
   console.log(
-    chalk.bold(
-      "package.json file is the heart of any Node.js project. It contains the metadata of the project and the dependencies"
+    chalk.blueBright(
+      "npm init creates a package.json file, it is the heart of any Node.js project. It contains the metadata of the project and the dependencies\n"
     )
   );
 
-  await sleep(2000);
+  await sleep(1000);
 
   let { name } = await inquirer.prompt({
     type: "input",
@@ -60,18 +64,14 @@ export default async function npmInit() {
     license: "ISC",
   };
   fs.mkdir(name, (err) => {
-    err && console.log(err);
+    err && console.log(err) ;
   });
   fs.writeFileSync(
     name + "/package.json",
     JSON.stringify(packageJson, null, 2)
   );
 
-  await sleep(1000);
-
-  let initSuccess = chalkAnimation.rainbow(
-    "project initiated & package.json created successfully!"
+  console.log(
+    chalk.green("project initiated & package.json created successfully!")
   );
-  await sleep(3000);
-  initSuccess.stop();
 }
