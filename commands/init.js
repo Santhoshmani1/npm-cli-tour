@@ -4,9 +4,13 @@ import inquirer from "inquirer";
 import chalkAnimation from "chalk-animation";
 import sleep from "../utils/sleep.js";
 
-export default async function npmInit() {
+export let projectDir = process.cwd() || "";
+
+export async function npmInit() {
+
+
   console.log(chalk.bold("Let's get started\n"));
-  const npmInit = chalkAnimation.rainbow("1. npm init");
+  const npmInit = chalkAnimation.rainbow("1. npm init",500);
   await sleep(3000);
   npmInit.start();
   npmInit.stop();
@@ -71,7 +75,9 @@ export default async function npmInit() {
     JSON.stringify(packageJson, null, 2)
   );
 
+  projectDir = projectDir + "/" + name;
+
   console.log(
-    chalk.green("project initiated & package.json created successfully!")
+    chalk.green("project initiated & package.json created successfully!\n")
   );
 }
