@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "bin" : "./index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": ["npm", "cli", "node"],
   "author": "",
   "license": "ISC",
   "dependencies": {
