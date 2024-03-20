@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "bin" : "./index.js",
+  "bin": "./build/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node build/index.js"
   },
-  "keywords": ["npm", "cli", "node"],
+  "keywords": [
+    "npm",
+    "cli",
+    "node"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -19,5 +23,12 @@
     "gradient-string": "^2.0.2",
     "inquirer": "^9.2.15",
     "nanospinner": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/chalk-animation": "^1.6.3",
+    "@types/figlet": "^1.5.8",
+    "@types/gradient-string": "^1.1.5",
+    "@types/inquirer": "^9.0.7",
+    "typescript": "^5.4.2"
   }
 }
