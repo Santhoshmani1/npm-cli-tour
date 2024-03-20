@@ -11,11 +11,11 @@ const installNotes = chalk.blueBright(
   "npm install helps you to install external packages & provides the ability to use them in your projects\n"
 );
 
-function installSuccess(packageName) {
+function installSuccess(packageName: String) {
   console.log(chalk.green(`${packageName} installed successfully`));
 }
 
-async function installPackage(answer) {
+async function installPackage(answer: String) {
   return new Promise((resolve, reject) => {
     exec(
       `cd ${projectDir} && npm install ${answer}`,

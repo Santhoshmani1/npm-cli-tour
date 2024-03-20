@@ -12,11 +12,11 @@ const unInstallNotes = chalk.blueBright(
   "npm uninstall removes packages from your project\n"
 );
 
-function unInstallSuccess(packageName) {
+function unInstallSuccess(packageName: String) {
   console.log(chalk.green(`${packageName} uninstalled successfully`));
 }
 
-async function unInstallPackage(answer) {
+async function unInstallPackage(answer: String) {
   return new Promise((resolve, reject) => {
     exec(
       `cd ${projectDir} && npm uninstall ${answer}`,

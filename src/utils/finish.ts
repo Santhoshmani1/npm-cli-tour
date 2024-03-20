@@ -2,7 +2,7 @@ import chalk from "chalk";
 import chalkAnimation from "chalk-animation";
 import sleep from "./sleep.js";
 
-async function finish() {
+async function finish(): Promise<void> {
   const finalGreetings = chalkAnimation.rainbow(
     "congratulations for getting started with npm. Now It's time to build something amazing!"
   );

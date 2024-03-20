@@ -11,7 +11,7 @@ const installDevDepNotes = chalk.blueBright(
   "npm install --save-dev helps you to install external packages as development dependency\n"
 );
 
-function installDevDepSuccess(packageName) {
+function installDevDepSuccess(packageName: String) {
   console.log(
     chalk.green(
       `${packageName} installed as development dependency successfully`
@@ -19,7 +19,7 @@ function installDevDepSuccess(packageName) {
   );
 }
 
-async function installDevDep(answer) {
+async function installDevDep(answer: String) {
   return new Promise((resolve, reject) => {
     exec(
       `cd ${projectDir} && npm install --save-dev ${answer}`,
@@ -35,7 +35,8 @@ async function installDevDep(answer) {
 }
 
 async function npmInstallDevDep() {
-  const npmInstallDevDepAnimation = chalkAnimation.rainbow(installDevDepWelcome);
+  const npmInstallDevDepAnimation =
+    chalkAnimation.rainbow(installDevDepWelcome);
   npmInstallDevDepAnimation.start();
   await sleep(2000);
   npmInstallDevDepAnimation.stop();
